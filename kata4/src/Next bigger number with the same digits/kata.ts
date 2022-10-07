@@ -8,8 +8,11 @@ export function nextBigger(n: number): number {
       } else if (digits[index] < digits[index - 1]) {
         index -= 1;
       } else {
-        let arr:number[] = digits.slice[index-1];
+        let arr:number[] = digits.slice(index-1);
         arr.sort((x, x1) => x > x1 ? 1 : -1);
+         digits[index-1] = arr.pop();
+         digits = digits.slice(0, index).concat(arr);
+         return parseInt(digits.join(''));
       }
     }
   }
