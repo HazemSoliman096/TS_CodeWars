@@ -1,16 +1,29 @@
-# Kata 7
+# Kata 5
 
-## Learning TypeScript. Classes & Interfaces. Setters
+## Vector class
 
-    Learning TypeScript. Classes & Interfaces. Setters  
+    Create a Vector object that supports addition, subtraction, dot products, and norms. So, for example:  
 
-    In "Learning TypeScript. Classes & Interfaces. Getters", we learned that if we knew all the dimensions (i.e. length, width, height) of a cuboid, we could easily work out its corresponding volume and surface area. The way we achieved this in our code was by the use of getters which automatically computed the volume and surface area of the cuboid whenever either one of length, width, height changed. However, in the previouos exercise, one thing we could not do is define setters for surface area or volume of a cuboid because for a given volume/SA, there were an infinite number of possibilities to the dimensions of the cuboid.
+```typescript
+a = new Vector([1, 2, 3])
+b = new Vector([3, 4, 5])
+c = new Vector([5, 6, 7, 8])
 
-    However, for cubes (a special type of cuboid), since their length, width and height are always the same, it is possible to figure out the side length of a cube given its surface area and/or volume. Therefore, in this Kata, you will be asked to define setters as well as getters for both the surface area and volume of a cube.
-    Task
+a.add(b)      # should return a new Vector([4, 6, 8])
+a.subtract(b) # should return a new Vector([-2, -2, -2])
+a.dot(b)      # should return 1*3 + 2*4 + 3*5 = 26
+a.norm()      # should return sqrt(1^2 + 2^2 + 3^2) = sqrt(14)
+a.add(c)      # throws an error
+```
 
-    You're given the ICuboid interface. Define a class Cube that implements ICuboid. Constructor function of Cube takes exactly one parameter length and stores the value of the argument into this.length. You will then define both a getter and a setter for the surfaceArea and volume of the cube.
-    Articles of Interest
+    If you try to add, subtract, or dot two vectors with different lengths, you must throw an error!  
 
-[Learning TypeScript. Classes & Interfaces. Setters](https://www.codewars.com/kata/590b85b745eaa415e10000b1)
+    Also provide:  
+
+    a toString method, so that using the vectors from above, a.toString() === '(1,2,3)' (in Python, this is a __str__ method, so that str(a) == '(1,2,3)')
+    an equals method, to check that two vectors that have the same components are equal
+
+    Note: the test cases will utilize the user-provided equals method.
+
+[Vector class](https://www.codewars.com/kata/526dad7f8c0eb5c4640000a4)
 ---------------------------------------------------------------------------------------------
