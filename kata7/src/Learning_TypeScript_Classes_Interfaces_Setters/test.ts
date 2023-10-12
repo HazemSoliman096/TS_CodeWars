@@ -1,5 +1,5 @@
-import {expect} from "chai";
-import {Cube} from "./kata";
+import { expect } from "chai";
+import { Cube } from "./kata";
 
 describe("The Cube class", () => {
   it("should initialize properly and have working getters and setters", () => {
@@ -19,11 +19,11 @@ describe("The Cube class", () => {
     cube.surfaceArea = 96;
     expect(cube.length).to.equal(4);
     expect(cube.volume).to.equal(64);
-    
+
     cube.volume = 125;
     expect(cube.length).to.approximately(5, 0.000001);
     expect(cube.surfaceArea).to.approximately(150, 0.000001);
-    
+
     cube.volume = 1000;
     expect(cube.length).to.approximately(10, 0.000001);
     expect(cube.surfaceArea).to.approximately(600, 0.000001);
